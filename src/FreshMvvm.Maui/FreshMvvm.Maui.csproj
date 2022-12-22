@@ -13,11 +13,11 @@
 		<SupportedOSPlatformVersion Condition="$(TargetFramework.Contains('-windows'))">10.0.18362.0</SupportedOSPlatformVersion>
 
 		<Authors>rid00z</Authors>
-		<PackageId>FreshMvvm.Maui</PackageId>
+		<PackageId>FreshMvvm.MauiObservableObject</PackageId>
 		<Company>FreshMvvm</Company>
 		<Version>0.0.4</Version>
 		<PackageLicenseUrl>https://github.com/XAM-Consulting/FreshMvvm.Maui/blob/main/LICENSE</PackageLicenseUrl>
-		<Description>FreshMvvm.Maui the famous FreshMvvm framwork, working on MAUI, Simple and easy Mvvm</Description>
+		<Description>FreshMvvm build based on FreshMvvm.Maui the famous FreshMvvm framwork, working on MAUI, Simple and easy Mvvm with support for CommunityToolkit ObservableObject.</Description>
 		<RepositoryUrl>https://github.com/XAM-Consulting/FreshMvvm.Maui</RepositoryUrl>
 		<PackageTags>Mvvm, .NET MAUI</PackageTags>
 		<PackageReleaseNotes>
@@ -28,9 +28,12 @@
 			0.0.2 This is the preview release built with preview 14 
         </PackageReleaseNotes>
 		<ReleaseVersion>0.4</ReleaseVersion>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<TargetFrameworks>$(TargetFrameworks);net6.0-windows10.0.19041</TargetFrameworks>
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0-preview2" />
 	  <PackageReference Include="System.Reactive" Version="5.0.0" />
 	</ItemGroup>
 

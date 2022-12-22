@@ -6,14 +6,13 @@ using System.Runtime.CompilerServices;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace FreshMvvm.Maui
 {
-    public abstract class FreshBasePageModel : INotifyPropertyChanged
-    {
+    public abstract partial class FreshBasePageModel : ObservableObject
+	{
         NavigationPage _navigationPage;
-
-        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// This event is raise when a page is Popped, this might not be raise everytime a page is Popped. 
@@ -55,14 +54,6 @@ namespace FreshMvvm.Maui
         /// <param name="initData">Data that's sent to this PageModel from the pusher</param>
         public virtual void Init(object initData)
         {
-        }
-
-        protected void RaisePropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            var handler = PropertyChanged;
-            if (handler != null) {
-                handler(this, new PropertyChangedEventArgs(propertyName));
-            }
         }
 
         internal void WireEvents(Page page)
